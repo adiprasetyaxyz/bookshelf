@@ -17,23 +17,26 @@
                 <img src="assets/img/ReadBook.png" alt="">
             </section>
                 <section class="card">
-                    <form action="">
-                        <span class="input">
+                    <h1>Masukan Buku Baru</h1>
+                    <form id="bookShelfForm">
+                        <div class="input">
+
                             <label for="judul">Judul</label>
                             <input type="text" name="judul" id="judul" placeholder="masukan judul buku">
-                        </span>
-                        <span class="input">
+                        </div>
+                       
+                        <div class="input">
                             <label for="penulis">Penulis</label>
                             <input type="text" name="penulis" id="penulis" placeholder="masukan Penulis buku">
-                        </span>
-                        <span class="input">
+                        </div>
+                        <div class="input">
                             <label for="tahun">Tahun</label>
                             <input type="number" name="tahun" id="tahun" placeholder="masukan Tahun pembuatan Buku">
-                        </span>
-                        <span class="radio">
+                        </div>
+                        <div class="radio">
                             <label for="bookIsComplete">Selesai dibaca</label>
                             <input type="checkbox" name="bookIsComplete" id="bookIsComplete">
-                        </span>
+                        </div>
                         <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
 
                     </form>
@@ -93,5 +96,9 @@
             </article>
         </div>
     </main>
+    <script src="assets/script/main.js"></script>
 </body>
+<footer>
+    <p> &copy; 2023 by Adi Prasetyawan</p>
+</footer>
 </html>
