@@ -8,12 +8,14 @@
 </head>
 <body>
     <head>
-        <nav><div id="icon">Adi Prasetyawan</div></nav>
+        <nav><div id="icon">Book Shelf App</div></nav>
     </head>
     <main>
         <div id="content">
             <article class="container">
-                <section id="title"><h1>BOOKSHELF</h1></section>
+                <section id="title">
+                <img src="assets/img/ReadBook.png" alt="">
+            </section>
                 <section class="card">
                     <form action="">
                         <span class="input">
@@ -39,21 +41,54 @@
             </article>
             <article>
                 <section class="search_section">
-                    <h2>Cari Buku (Opsional)</h2>
+                    <h2>Cari Buku</h2>
                     <form id="searchBook">
-                      <label for="searchBookTitle">Judul</label>
-                      <input id="searchBookTitle" type="text">
+
+                      <input id="searchBookTitle" placeholder="Ketik Judul" type="text">
                       <button id="searchSubmit" type="submit">Cari</button>
                     </form>
                   </section>
             </article>
             <article class="container">
                 
-                <section class="book_shelf"><h2>Belum dibaca</h2>
-                <div id="incompleteBookshelfList" class="book_list"></div>
+                <section class="book_shelf">
+                    <h2>Belum dibaca</h2>
+                <div id="incompleteBookshelfList" class="book_list">
+                    <article class="book_item">
+       <h3>Book Title</h3>
+       <p>Penulis: John Doe</p>
+       <p>Tahun: 2002</p>
+  
+       <div class="action">
+         <button class="green">Selesai dibaca</button>
+         <button class="red">Hapus buku</button>
+       </div>
+     </article>
+                </div>
                 </section>
                 <section class="book_shelf"><h2>Sudah dibaca</h2>
-                    <div id="completeBookshelfList" class="book_list"></div>
+                    <div id="completeBookshelfList" class="book_list">
+                        <article class="book_item">
+                     <h3>Book Title</h3>
+                     <p>Penulis: John Doe</p>
+                     <p>Tahun: 2002</p>
+                
+                     <div class="action">
+                       <button class="green">Selesai dibaca</button>
+                       <button class="red">Hapus buku</button>
+                     </div>
+                   </article>
+                   <article class="book_item">
+                    <h3>Book Title</h3>
+                    <p>Penulis: John Doe</p>
+                    <p>Tahun: 2002</p>
+               
+                    <div class="action">
+                      <button class="green">Selesai dibaca</button>
+                      <button class="red">Hapus buku</button>
+                    </div>
+                  </article>
+                </div>
                 </section>
             </article>
         </div>
