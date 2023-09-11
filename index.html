@@ -29,20 +29,32 @@
                             <input type="number" name="tahun" id="tahun" placeholder="masukan Tahun pembuatan Buku">
                         </span>
                         <span class="radio">
-                            <label for="dibaca">Selesai dibaca</label>
-                            <input type="checkbox" name="dibaca" id="dibaca">
+                            <label for="bookIsComplete">Selesai dibaca</label>
+                            <input type="checkbox" name="bookIsComplete" id="bookIsComplete">
                         </span>
-                        <span class="input">
-                            
-                            <input type="submit" name="submit" id="submit">
-                        </span>
+                        <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
 
                     </form>
                 </section>
             </article>
             <article>
-                <section></section>
-                <section></section>
+                <section class="search_section">
+                    <h2>Cari Buku (Opsional)</h2>
+                    <form id="searchBook">
+                      <label for="searchBookTitle">Judul</label>
+                      <input id="searchBookTitle" type="text">
+                      <button id="searchSubmit" type="submit">Cari</button>
+                    </form>
+                  </section>
+            </article>
+            <article class="container">
+                
+                <section class="book_shelf"><h2>Belum dibaca</h2>
+                <div id="incompleteBookshelfList" class="book_list"></div>
+                </section>
+                <section class="book_shelf"><h2>Sudah dibaca</h2>
+                    <div id="completeBookshelfList" class="book_list"></div>
+                </section>
             </article>
         </div>
     </main>
