@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function addBook(){
-        const inputJudul = document.getElementById('judul').value
-        const inputPenulis = document.getElementById('penulis').value
-        const inputTahun = document.getElementById('tahun').value
+        const inputTitle = document.getElementById('judul').value
+        const inputWriter = document.getElementById('penulis').value
+        const inputYear = document.getElementById('tahun').value
         const generatedID = generateId();
-        const addBookObject = generateaddBookObject(generatedID, inputJudul, inputPenulis,inputTahun, false);
-        addBooks.push(addBookObject);
-        console.log(inputJudul);
+        const bookListObject = generateBooksListObject(generatedID, inputTitle, inputWriter,inputYear, false);
+        booksList.push(bookListObject);
+        console.log(inputTitle);
        
         document.dispatchEvent(new Event(RENDER_EVENT));
   }
@@ -24,21 +24,57 @@ document.addEventListener('DOMContentLoaded', function () {
   function generateId() {
     return +new Date();
   }
-  function generateaddBookObject(id, judul, penulis,tahun, isCompleted) {
+  function generateBooksListObject(id, title, writer,year, isCompleted) {
     return {
         id, 
-        judul,
-        penulis,
-        tahun,
+        title, 
+        writer,
+        year, 
         isCompleted
     }
   }
 
-const addBooks = [];
-const RENDER_EVENT = 'render-addBooks';
+const booksList = [];
+const RENDER_EVENT = 'render-booksList';
 
 document.addEventListener(RENDER_EVENT, function () {
-    console.log(addBooks);
+    console.log(booksList);
+  });
+
+
+  // add book to shelf
+  function addBooks(booksList) {
+    const textTitle = document.createElement('h2');
+    textTitle.innerText = booksList.title;
+    
+    const textWriter = document.createElement('p');
+    textWriter.innerText = 'Penulis : '+booksList.writer;
+    
+    const textYear = document.createElement('p');
+    textYear.innerText ='Tahun : ' + booksList.year;
+
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('book_list');
+    textContainer.append(textTitle, textWriter, textYear);
+
+    const container = document.createElement('article');
+    container.classList.add('book_item');
+    container.append(textContainer);
+    container.setAttribute('id', `book-${booksList.id}`);
+ 
+  return container;
+  }
+  
+  document.addEventListener(RENDER_EVENT, function () {
+    const uncompleteBookshelfList = document.getElementById('incompleteBookshelfList');
+    uncompleteBookshelfList.innerHTML = '';
+   
+    for (const booksListItem of booksList) {
+        console.log(booksListItem);
+        const booksListElement = addBooks(booksListItem);
+        console.log(booksListElement)
+        uncompleteBookshelfList.append(booksListElement);
+      }
   });
 
 
