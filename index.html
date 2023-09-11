@@ -12,21 +12,29 @@
     </head>
     <main>
         <div id="content">
-            <article>
-                <section><h1>BOOKSHELF</h1></section>
-                <section>
+            <article class="container">
+                <section id="title"><h1>BOOKSHELF</h1></section>
+                <section class="card">
                     <form action="">
-                        <span>
+                        <span class="input">
                             <label for="judul">Judul</label>
                             <input type="text" name="judul" id="judul" placeholder="masukan judul buku">
                         </span>
-                        <span>
+                        <span class="input">
                             <label for="penulis">Penulis</label>
                             <input type="text" name="penulis" id="penulis" placeholder="masukan Penulis buku">
                         </span>
-                        <span>
+                        <span class="input">
                             <label for="tahun">Tahun</label>
                             <input type="number" name="tahun" id="tahun" placeholder="masukan Tahun pembuatan Buku">
+                        </span>
+                        <span class="radio">
+                            <label for="dibaca">Selesai dibaca</label>
+                            <input type="checkbox" name="dibaca" id="dibaca">
+                        </span>
+                        <span class="input">
+                            
+                            <input type="submit" name="submit" id="submit">
                         </span>
 
                     </form>
